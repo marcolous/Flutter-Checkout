@@ -1,3 +1,4 @@
+import 'package:checkout/Features/checkout/presentation/views/payment_details.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_total_price.dart';
@@ -24,7 +25,13 @@ class MyCartViewBody extends StatelessWidget {
           const Gap(15),
           const OrderInfoTotalPrice(text: 'Total', price: '50.97'),
           const Gap(15),
-          const CustomButton(),
+          CustomButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const PaymentDetails()),
+              );
+            },
+          ),
           const Gap(15),
         ],
       ),

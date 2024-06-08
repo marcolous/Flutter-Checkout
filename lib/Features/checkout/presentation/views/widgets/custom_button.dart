@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
+    required this.onPressed,
   });
-
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
             fixedSize: const Size(0, 72),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12))),
-        onPressed: () {},
+        onPressed: onPressed,
         child: const Text(
           'Complete Payment',
           style: Styles.style22,
