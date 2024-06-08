@@ -1,3 +1,4 @@
+import 'package:checkout/Features/checkout/presentation/views/my_cart_view_body.dart';
 import 'package:checkout/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyCartView extends StatelessWidget {
           style: Styles.style25,
         ),
       ),
+      body: const MyCartViewBody(),
     );
   }
 }
