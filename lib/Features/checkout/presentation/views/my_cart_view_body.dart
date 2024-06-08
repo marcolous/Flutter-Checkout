@@ -13,9 +13,7 @@ class MyCartViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          const Gap(25),
-          Image.asset('assets/images/basket_image.png'),
-          const Gap(25),
+          Expanded(child: Image.asset('assets/images/basket_image.png')),
           const OrderInfoItem(text: 'Order Subtotal', price: '42.97'),
           const Gap(3),
           const OrderInfoItem(text: 'Discount', price: '0'),
@@ -26,7 +24,8 @@ class MyCartViewBody extends StatelessWidget {
           const Gap(15),
           const OrderInfoTotalPrice(text: 'Total', price: '50.97'),
           const Gap(15),
-          const CustomButton()
+          const CustomButton(),
+          const Gap(15),
         ],
       ),
     );
