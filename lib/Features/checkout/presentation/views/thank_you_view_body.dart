@@ -4,6 +4,7 @@ import 'package:checkout/Features/checkout/presentation/views/widgets/custom_pai
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_text_row.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_white_circle.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/mastercard_list_tile.dart';
+import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_total_price.dart';
 import 'package:checkout/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -70,8 +71,7 @@ class ThankYouViewBody extends StatelessWidget {
                 const Gap(30),
                 const CustomDivider(),
                 const Gap(30),
-                const CustomTextRow(
-                    text1: 'Total', text2: r'$50.97', style: Styles.style24),
+                const OrderInfoTotalPrice(text: 'Total', price: '50.97'),
                 const Gap(30),
                 const MasterCardListTile(),
                 const Gap(88),

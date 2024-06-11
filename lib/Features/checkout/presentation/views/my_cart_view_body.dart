@@ -1,4 +1,5 @@
 import 'package:checkout/Features/checkout/presentation/views/payment_details.dart';
+import 'package:checkout/Features/checkout/presentation/views/payment_details_body.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_divider.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_item.dart';
@@ -29,9 +30,15 @@ class MyCartViewBody extends StatelessWidget {
           CustomButton(
             text: 'Complete Payment',
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const PaymentDetails()),
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const PaymentMethodsButtomSheet();
+                },
               );
+              // Navigator.of(context).push(
+              //   MaterialPageRoute(builder: (context) => const PaymentDetails()),
+              // );
             },
           ),
           const Gap(15),
@@ -41,4 +48,11 @@ class MyCartViewBody extends StatelessWidget {
   }
 }
 
+class PaymentMethodsButtomSheet extends StatelessWidget {
+  const PaymentMethodsButtomSheet({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return const PaymentDetailsBody();
+  }
+}

@@ -2,6 +2,7 @@ import 'package:checkout/Features/checkout/presentation/views/payment_method_lis
 import 'package:checkout/Features/checkout/presentation/views/thank_you_view.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class PaymentDetailsBody extends StatelessWidget {
   const PaymentDetailsBody({super.key});
@@ -11,8 +12,11 @@ class PaymentDetailsBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
+          const Gap(20),
           const PaymentMethodsListView(),
+          const Gap(20),
           CustomButton(
             text: 'Payment',
             onPressed: () {
@@ -20,7 +24,8 @@ class PaymentDetailsBody extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const ThankYouView()),
               );
             },
-          )
+          ),
+          const Gap(20),
         ],
       ),
     );

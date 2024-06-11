@@ -6,10 +6,8 @@ class CustomTextRow extends StatelessWidget {
     super.key,
     required this.text1,
     required this.text2,
-    this.style,
   });
   final String text1, text2;
-  final TextStyle? style;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,11 +15,11 @@ class CustomTextRow extends StatelessWidget {
       children: [
         Text(
           text1,
-          style: style ?? Styles.style18,
+          style: Styles.style18,
         ),
         Text(
           text2,
-          style: style ?? Styles.styleBold18,
+          style: Styles.styleBold18,
         ),
       ],
     );
