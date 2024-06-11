@@ -19,6 +19,19 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
+            //top: 50,
+            bottom: MediaQuery.sizeOf(context).height * .22,
+            child: Row(
+              children: List.generate(
+                25,
+                (index) => const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 3),
+                  child: CustomDots(),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
             left: -20,
             bottom: MediaQuery.sizeOf(context).height * .2,
             child: const CircleAvatar(
@@ -56,6 +69,26 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomDots extends StatelessWidget {
+  const CustomDots({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 10,
+      height: 3,
+      decoration: ShapeDecoration(
+        color: Colors.grey,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
       ),
     );
   }
