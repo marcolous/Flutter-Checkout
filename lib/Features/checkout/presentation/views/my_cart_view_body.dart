@@ -1,5 +1,6 @@
 import 'package:checkout/Features/checkout/presentation/views/payment_details.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
+import 'package:checkout/Features/checkout/presentation/views/widgets/custom_divider.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_total_price.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class MyCartViewBody extends StatelessWidget {
           const Gap(3),
           const OrderInfoItem(text: 'Shipping', price: '8'),
           const Gap(15),
-          const Divider(thickness: 2, indent: 15, endIndent: 15),
+          const CustomDivider(),
           const Gap(15),
           const OrderInfoTotalPrice(text: 'Total', price: '50.97'),
           const Gap(15),
@@ -39,3 +40,5 @@ class MyCartViewBody extends StatelessWidget {
     );
   }
 }
+
+
