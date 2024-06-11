@@ -1,3 +1,5 @@
+import 'package:checkout/Features/checkout/presentation/views/widgets/custom_dashed_lines.dart';
+import 'package:checkout/Features/checkout/presentation/views/widgets/custom_white_circle.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouViewBody extends StatelessWidget {
@@ -18,33 +20,9 @@ class ThankYouViewBody extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            //top: 50,
-            bottom: MediaQuery.sizeOf(context).height * .22,
-            child: Row(
-              children: List.generate(
-                25,
-                (index) => const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 3),
-                  child: CustomDots(),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: -20,
-            bottom: MediaQuery.sizeOf(context).height * .2,
-            child: const CircleAvatar(
-              backgroundColor: Colors.white,
-            ),
-          ),
-          Positioned(
-            right: -20,
-            bottom: MediaQuery.sizeOf(context).height * .2,
-            child: const CircleAvatar(
-              backgroundColor: Colors.white,
-            ),
-          ),
+          const CustomDashedLines(),
+          const CustomWhiteCircle(left: -20),
+          const CustomWhiteCircle(right: -20),
           Positioned(
             right: 0,
             left: 0,
@@ -69,26 +47,6 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CustomDots extends StatelessWidget {
-  const CustomDots({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 10,
-      height: 3,
-      decoration: ShapeDecoration(
-        color: Colors.grey,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
       ),
     );
   }
