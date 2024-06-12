@@ -1,4 +1,3 @@
-import 'package:checkout/Features/checkout/presentation/views/payment_details.dart';
 import 'package:checkout/Features/checkout/presentation/views/payment_details_body.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_divider.dart';
