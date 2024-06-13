@@ -1,4 +1,4 @@
-import 'package:checkout/Features/checkout/data/models/payment_intent_model/payment_intent_input_model.dart';
+import 'package:checkout/Features/checkout/data/models/payment_intent_input_model.dart';
 import 'package:checkout/Features/checkout/data/models/payment_intent_model/payment_intent_model.dart';
 import 'package:checkout/core/utils/api_keys.dart';
 import 'package:checkout/core/utils/api_service.dart';
@@ -23,5 +23,17 @@ class StripeService {
         merchantDisplayName: 'marco',
       ),
     );
+  }
+
+  Future displayPaymentSheet() async {
+    Stripe.instance.presentPaymentSheet();
+  }
+
+  Future makePayment(
+      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+    var paymentIntentModel = await createPaymentIntent(paymentIntentInputModel);
+    await initPaymentSheet(
+        paymentIntentClientSecret: paymentIntentModel.clientSecret!);
+    await displayPaymentSheet();
   }
 }
