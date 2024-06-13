@@ -1,4 +1,4 @@
-import 'package:checkout/Features/checkout/presentation/views/payment_details_body.dart';
+import 'package:checkout/Features/checkout/presentation/views/widgets/payment_methods_buttom_sheet.dart';
 import 'package:checkout/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +27,7 @@ class PaymentDetails extends StatelessWidget {
           style: Styles.style25,
         ),
       ),
-      body: const PaymentDetailsBody(),
+      body: const PaymentMethodsButtomSheet(),
     );
   }
 }

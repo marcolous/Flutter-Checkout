@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    required this.onPressed, required this.text,
+    required this.onPressed,
+    required this.text,
+    this.isLoading = false,
   });
   final void Function() onPressed;
   final String text;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,10 +23,12 @@ class CustomButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12))),
         onPressed: onPressed,
-        child:  Text(
-          text,
-          style: Styles.style22,
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : Text(
+                text,
+                style: Styles.style22,
+              ),
       ),
     );
   }

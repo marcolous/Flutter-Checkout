@@ -1,9 +1,12 @@
-import 'package:checkout/Features/checkout/presentation/views/payment_details_body.dart';
+import 'package:checkout/Features/checkout/data/models/repos/checkout_repo_impl.dart';
+import 'package:checkout/Features/checkout/presentation/manager/cubit/payment_cubit.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/custom_divider.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/order_info_total_price.dart';
+import 'package:checkout/Features/checkout/presentation/views/widgets/payment_methods_buttom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -32,26 +35,17 @@ class MyCartViewBody extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return const PaymentMethodsButtomSheet();
+                  return BlocProvider(
+                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                    child: const PaymentMethodsButtomSheet(),
+                  );
                 },
               );
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(builder: (context) => const PaymentDetails()),
-              // );
             },
           ),
           const Gap(15),
         ],
       ),
     );
-  }
-}
-
-class PaymentMethodsButtomSheet extends StatelessWidget {
-  const PaymentMethodsButtomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const PaymentDetailsBody();
   }
 }
