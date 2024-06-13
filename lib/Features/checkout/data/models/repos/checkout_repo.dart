@@ -6,5 +6,3 @@ abstract class CheckoutRepo {
   Future<Either<Failure, void>> makePayment(
       {required PaymentIntentInputModel paymentIntentInputModel});
 }
-
-
